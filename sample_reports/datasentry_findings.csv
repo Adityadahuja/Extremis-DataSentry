@@ -1,0 +1,11 @@
+severity,issue,column,count,percentage,detail,recommended_action
+Medium,Missing values,total_charges,74,12.17,74 missing cells (12.17% of rows).,Moderate missingness (5-20%). Check missingness mechanism (MCAR vs MAR) before imputing.
+Medium,Missing values,age,49,8.06,49 missing cells (8.06% of rows).,Moderate missingness (5-20%). Check missingness mechanism (MCAR vs MAR) before imputing.
+Medium,Missing values,support_tickets,31,5.1,31 missing cells (5.1% of rows).,Moderate missingness (5-20%). Check missingness mechanism (MCAR vs MAR) before imputing.
+Medium,Duplicate rows,(dataset-wide),6,0.99,6 exact identical rows (0.99%) present in dataset.,Investigate source pipeline for ingestion retries or key duplication; deduplicate if unintentional.
+Medium,Constant column,constant_status,1,0.0,Feature carries only 1 distinct non-null value (zero variance).,Zero predictive information for ML models; drop to reduce dimension and avoid collinearity.
+Low,High cardinality categorical,customer_id,600,98.68,600 distinct categories relative to 608 rows.,"Likely a primary key, tracking ID, or free-text column. Drop before one-hot encoding or hash encode."
+Low,High cardinality categorical,tracking_guid,600,98.68,600 distinct categories relative to 608 rows.,"Likely a primary key, tracking ID, or free-text column. Drop before one-hot encoding or hash encode."
+Low,Extreme numeric skewness,monthly_charges,1,0.0,Sample skewness is 17.51 (heavy right/left tail).,"Consider logarithmic, Box-Cox, or quantile power transformation if fitting linear/distance models."
+Low,Extreme numeric skewness,total_charges,1,0.0,Sample skewness is 21.08 (heavy right/left tail).,"Consider logarithmic, Box-Cox, or quantile power transformation if fitting linear/distance models."
+Low,Extreme numeric skewness,support_tickets,1,0.0,Sample skewness is 11.33 (heavy right/left tail).,"Consider logarithmic, Box-Cox, or quantile power transformation if fitting linear/distance models."
